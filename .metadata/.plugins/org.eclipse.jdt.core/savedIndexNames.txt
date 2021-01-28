@@ -1,0 +1,3 @@
+INDEX VERSION 1.131+C:\Users\mayak\Documents\GitHub\rosenbaum_maya_apcsa-2021\.metadata\.plugins\org.eclipse.jdt.core
+4010898063.index
+2796578922.index
