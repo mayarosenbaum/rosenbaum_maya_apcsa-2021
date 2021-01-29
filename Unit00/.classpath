@@ -5,6 +5,7 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" path="src"/>
+	<classpathentry excluding="Unit0Students-20210128T201514Z-001/Unit0Students/Unit0Assignments/|Unit0Students-20210128T201514Z-001/Unit0Students/Unit0Assignments/" kind="src" path="src"/>
+	<classpathentry kind="src" path="source"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
