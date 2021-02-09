@@ -9,5 +9,16 @@ public class Line
 	{
 		return (y2 - y1) / (x2 - x1);
 	}
+	
+	private int fun;
+	
+	public void change() {
+		int fun = 5;
+	}
+	
+	public String toString()
+	{
+		return "" + fun;
+	}
 
 }
