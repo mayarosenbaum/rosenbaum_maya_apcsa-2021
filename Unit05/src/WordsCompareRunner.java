@@ -21,6 +21,22 @@ public class WordsCompareRunner
 		s.setWords("b", "a");
 		s.compare();
 		System.out.println(s.toString());
+		
+		s.setWords("abe", "ape");
+		s.compare();
+		System.out.println(s.toString());
+		
+		s.setWords("giraffe", "gorilla");
+		s.compare();
+		System.out.println(s.toString());
+		
+		s.setWords("123", "19");
+		s.compare();
+		System.out.println(s.toString());
+		
+		s.setWords("goofy", "godfather");
+		s.compare();
+		System.out.println(s.toString());
 
 	}
 }

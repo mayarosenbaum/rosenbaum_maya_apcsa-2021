@@ -9,7 +9,7 @@ public class AvgLen
 	{
 	   double lengthOfA = a.length();
 	   double lengthOfB = b.length();
-		return (lengthOfA + lengthOfB)/2;
+	   return (lengthOfA + lengthOfB)/2;
 		
 	}
 }
