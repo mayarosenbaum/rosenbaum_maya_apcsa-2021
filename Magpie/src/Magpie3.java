@@ -45,6 +45,23 @@ public class Magpie3
 		{
 			response = "Tell me more about your family.";
 		}
+		//Teacher and pet responses
+		else if (findKeyword(statement, "dog") >= 0 ||findKeyword(statement, "cat") >= 0) {
+			response = "Tell me more about your pets.";
+		}
+		else if (findKeyword(statement, "Mr. Mauro") >= 0) {
+			response = "He sounds like a good teacher.";
+		}
+		//3 additional responses
+		else if (findKeyword(statement, "Maya") >= 0) {
+			response = "Wow, Maya is so swag. Swaggiest person I know. So so swag.";
+		}
+		else if (findKeyword(statement, "class") >= 0) {
+			response = "I really enjoy school myself";
+		}	
+		else if (findKeyword(statement, "food") >= 0) {
+			response = "well my favorite food is sushi.";
+		}
 		else
 		{
 			response = getRandomResponse();

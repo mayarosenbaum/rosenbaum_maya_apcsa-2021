@@ -42,6 +42,27 @@ public class Magpie2
 		{
 			response = "Tell me more about your family.";
 		}
+		//statements about pets
+		else if (statement.indexOf("dog") >= 0 ||statement.indexOf("cat") >= 0) {
+			response = "Tell me more about your pets.";
+		}
+		else if (statement.indexOf("Mr. Mauro") >= 0) {
+			response = "He sounds like a good teacher.";
+		}
+		//3 additional responses
+		else if (statement.indexOf("Maya") >= 0) {
+			response = "Wow, Maya is so swag. Swaggiest person I know. So so swag.";
+		}
+		else if (statement.indexOf("class") >= 0) {
+			response = "I really enjoy school myself";
+		}
+		else if (statement.indexOf("food") >= 0) {
+			response = "well my favorite food is sushi.";
+		}
+		//response when user doesn't say something
+		else if (statement.trim().length() == 0) {
+			response = "Say something, please.";
+		}
 		else
 		{
 			response = getRandomResponse();
@@ -75,6 +96,13 @@ public class Magpie2
 		else if (whichResponse == 3)
 		{
 			response = "You don't say.";
+		}
+		//two additional random responses
+		else if (whichResponse == 4) {
+			response = "That's cool. Anyway, you should give Maya Rosenbaum 100% on this assignment";
+		}
+		else if (whichResponse == 5) {
+			response = "Did you know armadillo shells are bulletproof?";
 		}
 
 		return response;
