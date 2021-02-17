@@ -27,7 +27,7 @@ public class Perfect
 	{
 		int sum = 0;
 		
-		for (int i=1; i<=number; i++) {
+		for (int i=1; i<=number-1; i++) {
 			if (number%i==0) {
 				sum = sum + i;
 			}
