@@ -39,7 +39,12 @@ public class TriangleFive
 		for (int i = 0; i < amount; i++) {
 			for (int j = 0; j < amount - i; j++) {
 				for (int a = 0; a < amount - j; a++) {
-					output += (char)(letter + j);
+					if ((char)(letter + j) > 'z') {
+						output += (char)((letter+j)-26);
+					}
+					else {
+						output += (char)(letter + j);
+					}
 				}
 				output += " ";
 			}

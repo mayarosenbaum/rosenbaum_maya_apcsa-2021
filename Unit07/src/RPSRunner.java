@@ -11,11 +11,7 @@ public class RPSRunner
 	{
 		Scanner keyboard = new Scanner(System.in);
 		char response;
-		
-		//add in a do while loop after you get the basics up and running
-		
-			
-		
+
 			out.print("type in your prompt [R,P,S] :: ");
 			response = keyboard.next().charAt(0);
 			String player = String.valueOf(response);

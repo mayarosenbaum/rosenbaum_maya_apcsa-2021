@@ -13,5 +13,9 @@ public class TriangleFiveRunner
 	   test.setAmount(4);
 	   System.out.println(test.toString());
 	   
+	   test.setLetter('x');
+	   test.setAmount(6);
+	   System.out.println(test.toString());
+	   
 	}
 }
