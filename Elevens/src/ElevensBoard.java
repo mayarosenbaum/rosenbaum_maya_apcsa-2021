@@ -40,6 +40,7 @@ public class ElevensBoard extends Board {
   */
   public ElevensBoard() {
    super(BOARD_SIZE, RANKS, SUITS, POINT_VALUES);
+   System.out.println("Maya Rosenbaum, Period 3, 4/14/21");
   }
 
  /**
@@ -53,11 +54,15 @@ public class ElevensBoard extends Board {
   */
  @Override
  public boolean isLegal(List<Integer> selectedCards) {
-  if (selectedCards.size() == 2) {
-   return containsPairSum11(selectedCards);
-  } else if (selectedCards.size() == 3) {
-   return containsJQK(selectedCards);
-  } else {
+  if (containsPairSum11(selectedCards)) {
+	  return true;
+  } else if (containsJQK(selectedCards)) {
+	  return true;
+  } 
+  else if (containsDoubleFace(selectedCards)) {
+	  return true;
+  }
+  else {
    return false;
   }
  }
@@ -89,13 +94,31 @@ public class ElevensBoard extends Board {
    int k1 = selectedCards.get(sk1).intValue();
    for (int sk2 = sk1 + 1; sk2 < selectedCards.size(); sk2++) {
     int k2 = selectedCards.get(sk2).intValue();
-    if (cardAt(k1).pointValue() + cardAt(k2).pointValue() == 11) {
+    for (int sk3 = sk2 + 1; sk3 < selectedCards.size(); sk3++) {
+    	int k3 = selectedCards.get(sk3).intValue();
+    	if (cardAt(k1).pointValue() + cardAt(k2).pointValue() + cardAt(k3).pointValue() == 11) {
      return true;
+     }
     }
    }
   }
-  return false;
+   return false;
+  }
+ 
+ private boolean containsDoubleFace(List<Integer> selectedCards) {
+	 if (selectedCards.size() < 2) {
+		 return false;
+	 }
+	 for (int i = 0; i < selectedCards.size() - 1; i++) {
+		 for (int j = i + 1; j < selectedCards.size(); j++) {
+			 if (cardAt(selectedCards.get(i)).suit() == cardAt(selectedCards.get(j)).suit()) {
+				 return true;
+			 }
+		 }
+	 }
+	 return false;
  }
+	 
 
  /**
   * Check for a JQK in the selected cards.
