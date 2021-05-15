@@ -1,193 +1,115 @@
-//(c) A+ Computer Science
-//www.apluscompsci.com
-//Name -
-
 import java.awt.Color;
 import java.awt.Graphics;
 
 public class Block implements Locatable
 {
-	@Override
-	public String toString() {
-		return "Block [xPos=" + xPos + ", yPos=" + yPos + ", width=" + width
-				+ ", height=" + height + ", color=" + color + "]";
-	}
+  private int xPos;
+  private int yPos;
+  private int width;
+  private int height;
 
-	private int xPos;
-	private int yPos;
-	protected int width;
-	protected int height;
+  private Color color;
 
-	protected Color color;
-	
-	public Block() {
-		xPos = 0;
-		yPos = 0;
-		width = 0;
-		height = 0;
-		color = Color.GREEN;
-	}
+  public Block() {
+    xPos = 100; 
+    yPos = 150;
+    width = 10;
+    height = 10;
+    color = new Color(0, 0, 0);
+  }
 
-	public Block(int xPos, int yPos, int width, int height) {
-		super();
-		this.xPos = xPos;
-		this.yPos = yPos;
-		this.width = width;
-		this.height = height;
-		color = Color.GREEN;
-	}
-	
-	public Block(int xPos, int yPos, int width, int height, Color c) {
-		super();
-		this.xPos = xPos;
-		this.yPos = yPos;
-		this.width = width;
-		this.height = height;
-		color = c;
-	}
+  public Block(int x, int y) {
+    xPos = x;
+    yPos = y;
+    width = 10;
+    height = 10;
+    color = new Color(0, 0, 0);
+  }
 
+  public Block(int x, int y, Color color) {
+    xPos = x;
+    yPos = y;
+    width = 10;
+    height = 10;
+    this.color = color;
+  }
 
+  public Block(int x, int y, int width, int height) {
+    xPos = x;
+    yPos = y;
+    this.width = width;
+    this.height = height;
+    color = new Color(0, 0, 0);
+  }
 
-	//add other Block constructors - x , y , width, height, color
-	
-	
-	
-	public Block(int xPos, int yPos) {
-		this.xPos = xPos;
-		this.yPos = yPos;
-		width = 10;
-		height = 10;
-		color = Color.GREEN;
-	}
-	
-	
-	
-	
-	
-	
-	
-	public int getWidth() {
-		return width;
-	}
-	
-	public int getHeight() {
-		return height;
-	}
-	
-   //add the other set methods
+  public Block(int x, int y, int width, int height, Color color) {
+    xPos = x;
+    yPos = y;
+    this.width = width;
+    this.height = height;
+    this.color = color;
+  }  
+
+  public void setPos(int x, int y) {
+    xPos = x;
+    yPos = y;
+  }
+  public void setX(int x) {
+    xPos = x;
+  }
+  public void setY(int y) {
+    yPos = y;
+  }
+
+  public void setColor(Color color) {
+    this.color = color;
+  }
+
+  public int getX() {
+    return xPos;
+  }
+
+  public int getY() {
+    return yPos;
+  }
+
+  public int getWidth() {
+    return width;
+  }
+
+  public int getHeight() {
+    return height;
+  }
+
+  public Color getColor() {
+    return color;
+  }
+
+  public void draw(Graphics window)
+  {
+    //uncomment after you write the set and get methods
+    window.setColor(color);
+    window.fillRect(getX(), getY(), getWidth(), getHeight());
+  }
+
+  public void draw(Graphics window, Color col) {
+    window.setColor(col);
+    window.fillRect(getX(), getY(), getWidth(), getHeight());
+  }
    
+  public boolean equals(Object obj)
+  {
+    Block b = (Block) (obj);
+    return (b.getX() == xPos && b.getY() == yPos && b.getWidth() == width && b.getHeight() == height && b.getColor().equals(color));
+  }   
 
-   public void setColor(Color col)
-   {
-	   color = col;
-
-   }
-   
-   public Color getColor() {
-	   return color;
-   }
-   
-   public void draw(Graphics window)
-   {
-      window.setColor(color);
-      window.fillRect(getX(), getY(), getWidth(), getHeight());
-   }
-
-   public void draw(Graphics window, Color col)
-   {
-	  draw(window);
-   }
-   
-	public boolean equals(Object obj)
-	{
+  //add the other get methods
+  
 
 
+  //add a toString() method  - x , y , width, height, color
+  public String toString() {
+    return xPos + " " + yPos + " " + width + " " + height + " " + color;
+  }
 
-
-		return this == obj;
-	}
-
-	@Override
-	public void setPos(int x, int y) {
-		// TODO Auto-generated method stub
-		setX(x);
-		setY(y);
-	}
-
-	@Override
-	public void setX(int x) {
-		// TODO Auto-generated method stub
-		xPos = x;
-	}
-
-	@Override
-	public void setY(int y) {
-		// TODO Auto-generated method stub
-		yPos = y;
-	}
-
-	@Override
-	public int getX() {
-		// TODO Auto-generated method stub
-		return xPos;
-	}
-
-	@Override
-	public int getY() {
-		// TODO Auto-generated method stub
-		return yPos;
-	}   
-
-   //add the other get methods
-    
-
-   //add a toString() method  - x , y , width, height, color
-}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-   //add the other set methods
-   
-
-   public void setColor(Color col)
-   {
-
-
-   }
-
-   public void draw(Graphics window)
-   {
-   	//uncomment after you write the set and get methods
-      //window.setColor(color);
-      //window.fillRect(getX(), getY(), getWidth(), getHeight());
-   }
-
-   public void draw(Graphics window, Color col)
-   {
-
-
-   }
-   
-	public boolean equals(Object obj)
-	{
-
-
-
-
-		return false;
-	}   
-
-   //add the other get methods
-    
-
-   //add a toString() method  - x , y , width, height, color
 }

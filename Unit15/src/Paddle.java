@@ -1,101 +1,113 @@
-//(c) A+ Computer Science
-//www.apluscompsci.com
-//Name -
-
-import java.awt.Color;
-import java.awt.Graphics;
-
 import java.awt.Color;
 import java.awt.Graphics;
 
 public class Paddle extends Block
 {
-   //instance variables
-   private int speed;
+  //instance variables
+  private int speed;
 
-   public Paddle()
-   {
-		super(10,10, 10, 50);
-		speed =5;
-		
-		setColor(Color.BLACK);
-		
-   }
+  public Paddle() {
+    super(10,10);
+    speed = 1;
+  }
 
+  public Paddle(int x, int y) {
+    super(x, y);
+    speed = 1;
+  }
 
-   //add the other Paddle constructors
+  public Paddle(int x, int y, int speed) {
+    super(x, y);
+    this.speed = speed;
+  }
 
+  public Paddle(int x, int y, int width, int height) {
+    super(x, y, width, height);
+    speed = 1;
+  }
 
+  public Paddle(int x, int y, int width, int height, int speed) {
+    super(x, y, width, height);
+    this.speed = speed;
+  }
 
+  public Paddle(int x, int y, int width, int height, Color color) {
+    super(x, y, width, height, color);
+    speed = 1;
+  }
 
-
-
-
-
-
-
-   public Paddle(int i, int j) {
-	// TODO Auto-generated constructor stub
-	   
-	   super(i,j , 10, 50);
-	   speed = 5;
-	   setColor(Color.BLACK);
-}
-
-
-public Paddle(int i, int j, int k) {
-	// TODO Auto-generated constructor stub
-	
-	 super(i,j , 10, 50);
-	   speed = k;
-	   setColor(Color.BLACK);
-}
+  public Paddle(int x, int y, int width, int height, Color color, int speed) {
+    super(x, y, width, height, color);
+    this.speed = speed;
+  }
 
 
-public Paddle(int i, int j, int k, int l, int m) {
-	// TODO Auto-generated constructor stub
-	
-	 super(i,j , l, m);
-	   speed = k;
-	   
-	   setColor(Color.BLACK);
-}
+  //add the other Paddle constructors
 
+  public void moveUpAndDraw(Graphics window) {
+    super.draw(window, Color.white);
+    setY(getY() + speed);
+    super.draw(window);
+  }
 
-public Paddle(int i, int j, int k, int l, Color green, int m) {
-	// TODO Auto-generated constructor stub
-	 super(i,j , l, m);
-	   speed = k;
-	   setColor(green);
-	
-}
+  public void moveDownAndDraw(Graphics window) {
+    super.draw(window, Color.white);
+    setY(getY() - speed);
+    super.draw(window);
+  }
 
+  //add get methods
+  public void setPos(int x, int y) {
+    super.setPos(x, y);
+  }
 
-public void moveUpAndDraw(Graphics window)
-   {
-	
-		draw(window, Color.WHITE);
+  public void setX(int x) {
+    super.setX(x);
+  }
 
-	  //setX(getX()+speed);
-	  setY(getY()+speed);
+  public void setY(int y) {
+    super.setY(y);
+  }
 
-	  draw(window, Color.BLACK);
+  public void setColor(Color color) {
+    super.setColor(color);
+  }
 
-   }
+  public void setSpeed(int speed) {
+    this.speed = speed;
+  }
 
-   public void moveDownAndDraw(Graphics window)
-   {
-	   draw(window, Color.WHITE);
-		
-		  //setX(getX()-speed);
-		  setY(getY()-speed);
+  public int getX() {
+    return super.getX();
+  }
 
-		  draw(window, Color.BLACK);
+  public int getY() {
+    return super.getY();
+  }
 
-   }
+  public int getWidth() {
+    return super.getWidth();
+  }
 
-   //add get methods
+  public int getHeight() {
+    return super.getHeight();
+  }
+
+  public Color getColor() {
+    return super.getColor();
+  }
+
+  public int getSpeed() {
+    return speed;
+  }
    
-   
-   //add a toString() method
+  //add a toString() method
+  public String toString() {
+    return super.toString() + " " + speed;
+  }
+
+  public boolean equals(Object obj) {
+    Paddle p = (Paddle)(obj);
+    return (super.equals(obj) && p.getSpeed() == speed);
+  } 
 }
